@@ -1,7 +1,7 @@
 ******************************************************************************
                TMS320C6x Linker PC v7.4.4                      
 ******************************************************************************
->> Linked Tue May 19 22:14:14 2026
+>> Linked Tue May 19 22:23:10 2026
 
 OUTPUT FILE NAME:   <Image_Transform.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: c0808700
@@ -33,7 +33,7 @@ section   page    origin      length       input sections
                   c0000008    007ffff8     --HOLE--
 
 .text      0    c0800000    00008e80     
-                  c0800000    000018c0     image_transform.obj (.text)
+                  c0800000    000018c0     image_transform.lib : image_transform.obj (.text)
                   c08018c0    000005a0     rts6740.lib : divd.obj (.text:__divd)
                   c0801e60    00000580                 : _printfi.obj (.text:__getarg_diouxp)
                   c08023e0    000004c0                 : fwrite.obj (.text:_fwrite)
@@ -138,7 +138,7 @@ section   page    origin      length       input sections
                   c0808e88    00000ff8     --HOLE--
 
 .far       0    c0809e80    000008f0     UNINITIALIZED
-                  c0809e80    00000400     image_transform.obj (.far)
+                  c0809e80    00000400     image_transform.lib : image_transform.obj (.far)
                   c080a280    00000324     rts6740.lib : defs.obj (.far)
                   c080a5a4    00000004                 : fopen.obj (.far)
                   c080a5a8    0000011c                 : lowlev.obj (.far)
@@ -156,7 +156,7 @@ section   page    origin      length       input sections
                   c080a980    00000101     rts6740.lib : ctype.obj (.const:.string:__ctypes_)
                   c080aa81    00000002                 : fputs.obj (.const:.string)
                   c080aa83    00000001     --HOLE-- [fill = 0]
-                  c080aa84    00000058     image_transform.obj (.const:.string)
+                  c080aa84    00000058     image_transform.lib : image_transform.obj (.const:.string)
                   c080aadc    00000023     rts6740.lib : _printfi.obj (.const:.string)
 
 .cinit     0    c080ab00    000001e4     
@@ -177,7 +177,7 @@ section   page    origin      length       input sections
                   c080ace0    00000004     (.pad.cinit) [fill = 0]
 
 .bss       0    c080ace4    00000004     UNINITIALIZED
-                  c080ace4    00000004     image_transform.obj (.bss)
+                  c080ace4    00000004     image_transform.lib : image_transform.obj (.bss)
 
 .cio       0    c080ace8    00000120     UNINITIALIZED
                   c080ace8    00000120     rts6740.lib : trgmsg.obj (.cio)

@@ -9,8 +9,8 @@ CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/c6000_7.4.4
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
-"./image_transform.obj" \
 "../C6748.cmd" \
+"../image_transform.lib" \
 -l"libc.a" \
 
 -include ../makefile.init
@@ -113,7 +113,7 @@ endif
 all: Image_Transform.out
 
 # Tool invocations
-Image_Transform.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Image_Transform.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C6000 Linker'
 	"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --define=c6748 --display_error_number --diag_warning=225 --diag_wrap=off -z --stack_size=0x800 -m"Image_Transform.map" --heap_size=0x800 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Image_Transform_linkInfo.xml" --rom_model -o "Image_Transform.out" $(ORDERED_OBJS)
@@ -123,8 +123,8 @@ Image_Transform.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(C6000_EXECUTABLE_OUTPUTS__QUOTED) "Image_Transform.out"
-	-$(RM) "image_transform.pp" "main.pp" 
-	-$(RM) "image_transform.obj" "main.obj" 
+	-$(RM) "main.pp" 
+	-$(RM) "main.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
