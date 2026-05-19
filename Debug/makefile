@@ -9,6 +9,7 @@ CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/c6000_7.4.4
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
+"./image_transform.obj" \
 "../C6748.cmd" \
 -l"libc.a" \
 
@@ -122,8 +123,8 @@ Image_Transform.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(C6000_EXECUTABLE_OUTPUTS__QUOTED) "Image_Transform.out"
-	-$(RM) "main.pp" 
-	-$(RM) "main.obj" 
+	-$(RM) "image_transform.pp" "main.pp" 
+	-$(RM) "image_transform.obj" "main.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
