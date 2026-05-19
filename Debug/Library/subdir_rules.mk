@@ -2,7 +2,5 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-USER_OBJS :=
-
-LIBS := -l"mathlib.a674" -l"libc.a"
+# Each subdirectory must supply rules for building sources it contributes
 
