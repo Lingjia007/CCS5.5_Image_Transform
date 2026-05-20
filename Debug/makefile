@@ -10,7 +10,8 @@ ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
 "../C6748.cmd" \
-"../Library/image_transform.lib" \
+"../Library/opencv_dsp_c674x.lib" \
+-l"opencv_dsp_c674x.lib" \
 -l"mathlib.a674" \
 -l"libc.a" \
 
@@ -119,7 +120,7 @@ all: Image_Transform.out
 Image_Transform.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C6000 Linker'
-	"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --define=c6748 --display_error_number --diag_warning=225 --diag_wrap=off -z --stack_size=0x800 -m"Image_Transform.map" --heap_size=0x800 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"D:/CCS5.5/Image_Transform/Library" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Image_Transform_linkInfo.xml" --rom_model -o "Image_Transform.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --define=c6748 --display_error_number --diag_warning=225 --diag_wrap=off -z --stack_size=0x800 -m"Image_Transform.map" --heap_size=0x100000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"D:/CCS5.5/Image_Transform/Library" -i"C:/Users/31254/Downloads/OpenCV_DSP/lib_output_c674x" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Image_Transform_linkInfo.xml" --rom_model -o "Image_Transform.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

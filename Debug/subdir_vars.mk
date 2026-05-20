@@ -3,25 +3,25 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../main.cpp 
+
 CMD_SRCS += \
 ../C6748.cmd 
-
-C_SRCS += \
-../main.c 
 
 OBJS += \
 ./main.obj 
 
-C_DEPS += \
+CPP_DEPS += \
 ./main.pp 
 
-C_DEPS__QUOTED += \
+CPP_DEPS__QUOTED += \
 "main.pp" 
 
 OBJS__QUOTED += \
 "main.obj" 
 
-C_SRCS__QUOTED += \
-"../main.c" 
+CPP_SRCS__QUOTED += \
+"../main.cpp" 
 
 

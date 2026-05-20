@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l"mathlib.a674" -l"libc.a"
+LIBS := -l"opencv_dsp_c674x.lib" -l"mathlib.a674" -l"libc.a"
 
